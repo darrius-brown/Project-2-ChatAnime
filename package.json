@@ -1,0 +1,28 @@
+{
+  "name": "chatanime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darriub15/ChatAnime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darriub15/ChatAnime/issues"
+  },
+  "homepage": "https://github.com/Darriub15/ChatAnime#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.0.2",
+    "express": "^4.17.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15"
+  }
+}
