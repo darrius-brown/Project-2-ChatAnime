@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="styles.css" />
+
+<h1>Chat Anime</h1>
+
+<div class="container">
+    <% episodes.forEach(episode => { %>
+    <div class="cards">
+        <div class="font"><%=episode.name %></div>
+        <input type="image" src="<%=episode.img %>" name="saveForm" class="btTxt submit" id="saveForm" />
+    </div>
+    <% }) %>
+</div>
