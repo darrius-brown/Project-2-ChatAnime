@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Chatime</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <% episodes.forEach(episode=> { %>
+                <div class="cards">
+                    <div class="font">Episode <%=episode.episodeNumber %>
+                    </div>
+                    <div class="font">
+                        <%=episode.name %>
+                    </div>
+                    <input type="image" src="<%=episode.img %>" name="saveForm" class="btTxt submit" id="saveForm" />
+                    <a href="/<%=episode.episodeNumber %>">Discuss here!</a>
+                </div>
+
+                <% }) %>
+        </div>
+    </body>
+
+</html>

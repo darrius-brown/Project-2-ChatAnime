@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Chatime</title>
+    </head>
+
+    <body>
+       <div class="container">
+           <h1><%=episode[0].name%></h1>
+           <input type="image" src="<%=episode[0].img %>" name="saveForm" class="btTxt submit" id="saveForm" />
+           <ul>
+               <h5>Release Date:</h5>
+               <li> <%=episode[0].releaseDate%></li>
+               <h5>Summary:</h5>
+               <li> <%=episode[0].summary%></li>
+               <h5>Intro Song:</h5>
+               <li> <%=episode[0].introSong%></li>
+               <h5>Outro Song:</h5>
+               <li> <%=episode[0].outroSong%></li>
+           </ul>
+       </div>
+       <div class="container">
+        <a href="/<%=episode[0].episodeNumber%>/new" class="btn btn-primary">Add a comment</a>
+        <% comments.forEach(comment=> { %>
+            <div class="cards">
+                <div class="font"> <%=comment.post %></div>
+                <a href="/<%=comment._id %>" class="btn btn-secondary"> Edit Comment</a>
+            </div>
+        <% }) %>
+    </div>
+    </body>
