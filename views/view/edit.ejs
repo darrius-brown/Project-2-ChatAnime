@@ -1,1 +1,25 @@
-<h2>Edit comment</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Chatime</title>
+</head>
+
+<body>
+    <h2>Edit Comment</h2>
+    <form action="/<%=episode[0].episodeNumber%>/<%=comments[0]._id%>/?_method=put" method="POST">
+        <div class="form-group">
+            <label for="post">Post:</label>
+            <input type="text" id="post" name="post" class="form-control" value="<%=this.post%>">
+        </div>
+        <input type="submit" value="Update Post" class="btn btn-primary" />
+        <a href="/" class="btn btn-secondary">Cancel</a>
+    </form>
+    <form action="/<%=episode[0].episodeNumber%>/<%=comments[0]._id%>?_method=DELETE" method="POST" class="d-inline">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+
+</body>
+
+</html>

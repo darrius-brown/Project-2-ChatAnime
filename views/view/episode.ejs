@@ -26,7 +26,7 @@
         <% comments.forEach(comment=> { %>
             <div class="cards">
                 <div class="font"> <%=comment.post %></div>
-                <a href="/<%=comment._id %>" class="btn btn-secondary"> Edit Comment</a>
+                <a href="/<%=episode[0].episodeNumber%>/<%=comment._id %>/edit" class="btn btn-secondary"> Edit Comment</a>
             </div>
         <% }) %>
     </div>
