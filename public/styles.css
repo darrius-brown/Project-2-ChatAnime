@@ -3,6 +3,8 @@
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
     grid-gap: 16px;
+    background-color: rgb(17, 17, 17);
+    
 }
 
 
@@ -12,12 +14,16 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to bottom right,rgb(95, 3, 3), rgb(0, 0, 0));
+    height: 400px;
+    text-align: center;
+
 }
 
 .font{
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 20px;
 }
 
@@ -69,4 +75,17 @@
 
 .removeFormMargin{
     margin: 0; 
+}
+
+.font{
+    color: rgb(186, 185, 185)
+}
+
+.link{
+    color: rgb(174, 84, 174)
+}
+
+#ep-num {
+    font-weight: bold;
+    text-decoration: underline;
 }

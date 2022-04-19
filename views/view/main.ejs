@@ -10,13 +10,13 @@
         <div class="container">
             <% episodes.forEach(episode=> { %>
                 <div class="cards">
-                    <div class="font">Episode <%=episode.episodeNumber %>
-                    </div>
+                    <h2 class="font" id="ep-num">Episode <%=episode.episodeNumber %>
+                    </h2>
                     <div class="font">
                         <%=episode.name %>
                     </div>
-                    <input type="image" src="<%=episode.img %>" name="saveForm" class="btTxt submit" id="saveForm" />
-                    <a href="/<%=episode.episodeNumber %>">Discuss here!</a>
+                    <input type="image" src="<%=episode.img %>" name="saveForm" class="btTxt img submit" id="saveForm" />
+                    <a class='link'href="/<%=episode.episodeNumber %>">Discuss here!</a>
                 </div>
 
                 <% }) %>

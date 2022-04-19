@@ -15,17 +15,14 @@ router.get("/:episode", (req, res, next) => {
   console.log('Get episode route reached!')
 Episode.find({episodeNumber:req.params.episode})
     .then(ep => {
-      Comment.find({episode:req.params.episode})
+      Comment.find({episode:req.params.episode}).sort({updatedAt:-1})
     .then((comment) => {
       res.render("view/episode", {episode: ep, comments: comment})})
     })
     .catch(next);
 });
 
-router.post("/", (req, res) => {
-    Episode.create(req.body)
-    .then(res.redirect("/"))
-  });
+
 //CREATE COMMENT
   router.get('/:episode/:new', (req, res, next) => {
     Episode.find({episodeNumber:req.params.episode})
@@ -48,7 +45,7 @@ router.post("/:episode", (req, res) => {
 })
 .catch(console.error)
 })
-
+//EDIT COMMENT
 router.get('/:episode/:id/:edit', (req, res, next) => {
   Episode.find({episodeNumber:req.params.episode})
   .then(ep => {
@@ -71,6 +68,7 @@ router.put('/:episode/:id', (req, res) => {
   .catch(console.error);
   });
 
+//DELETE COMMENT
   router.delete('/:episode/:id', (req, res) => {
     console.log('Delete Comment route reached!')
     console.log(req.params.id)
@@ -81,6 +79,11 @@ router.put('/:episode/:id', (req, res) => {
     })
   })
 
+//CREATE EPISODE (rare)
+  router.post("/", (req, res) => {
+    Episode.create(req.body)
+    .then(res.redirect("/"))
+  });
 
   const EpisodesController = router
   module.exports = EpisodesController;
