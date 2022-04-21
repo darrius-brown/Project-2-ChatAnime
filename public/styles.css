@@ -7,6 +7,15 @@
     
 }
 
+.sub-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 200px 200px 200px 200px;
+    background-color: rgb(17, 17, 17);
+    
+}
+
 
 .cards{
     border: 1px black solid;
@@ -37,6 +46,7 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    background-color: rgb(255, 255, 255)
 }
 
 .add {
@@ -82,10 +92,22 @@
 }
 
 .link{
-    color: rgb(174, 84, 174)
+    color: rgb(0, 0, 0);
+    font-weight: 600;
 }
 
 #ep-num {
     font-weight: bold;
     text-decoration: underline;
+}
+
+#ep-name{
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 4;
+  color: white
+}
+
+#img{
+ grid-column: 1 / span 2;
+  grid-row: 2 / span 4;
 }

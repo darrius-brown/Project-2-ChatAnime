@@ -7,10 +7,10 @@
     </head>
 
     <body>
-       <div class="container">
-           <h1><%=episode[0].name%></h1>
-           <input type="image" src="<%=episode[0].img %>" name="saveForm" class="btTxt submit" id="saveForm" />
-           <ul>
+       <div class="sub-container">
+           <h1 id="ep-name"><%=episode[0].name%></h1>
+           <input id="img"type="image" src="<%=episode[0].img %>" name="saveForm" class="btTxt submit" id="saveForm" />
+           <ul class="font">
                <h5>Release Date:</h5>
                <li> <%=episode[0].releaseDate%></li>
                <h5>Summary:</h5>
@@ -20,14 +20,13 @@
                <h5>Outro Song:</h5>
                <li> <%=episode[0].outroSong%></li>
            </ul>
-       </div>
-       <div class="container">
-        <a href="/<%=episode[0].episodeNumber%>/new" class="btn btn-primary">Add a comment</a>
+           <a href="/<%=episode[0].episodeNumber%>/new" class="btn btn-primary">Add a comment</a>
         <% comments.forEach(comment=> { %>
             <div class="cards">
                 <div class="font"> <%=comment.post %></div>
                 <a href="/<%=episode[0].episodeNumber%>/<%=comment._id %>/edit" class="btn btn-secondary"> Edit Comment</a>
-            </div>
-        <% }) %>
+                <% }) %>
+       </div>
+        
     </div>
     </body>
