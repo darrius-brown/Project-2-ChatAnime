@@ -1,6 +1,6 @@
 const mongoose = require('../db/connection')
 const EpisodeSchema = new mongoose.Schema({
-    episodeNumber: {type: Number},
+    episodeNumber: {type: String},
     name: {type: String},
     releaseDate: {type: Date},
     img: {type: String},

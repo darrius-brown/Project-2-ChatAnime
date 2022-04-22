@@ -1,6 +1,6 @@
 const mongoose = require('../db/connection')
 const CommentsSchema = new mongoose.Schema({
-    episode: {type: Number},
+    episode: {type: String},
     post: {type: String},
     likes:{type: Number, default: 0}
 },

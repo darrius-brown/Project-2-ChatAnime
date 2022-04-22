@@ -3,30 +3,29 @@ const router = express.Router()
 const Episode = require('../models/episodes-model')
 const Comment = require('../models/comments-model');
 //READ
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
   console.log('Get episodes route reached!')
   Episode.find({})
     .then(episode => {
       res.render("view/main", { episodes: episode })
     })
-    .catch(next);
 });
 
-router.get("/:episode", (req, res, next) => {
+router.get("/:episode", (req, res) => {
   console.log('Get episode route reached!')
   Episode.find({ episodeNumber: req.params.episode })
     .then(episode => {
       Comment.find({ episode: req.params.episode }).sort({ updatedAt: -1 })
         .then((comments) => {
+          console.log(episode)
           res.render("view/episode", {episode, comments })
         })
     })
-    .catch(next);
 });
 
 
 //CREATE COMMENT
-router.get('/:episode/:new', (req, res, next) => {
+router.get('/:episode/new', (req, res) => {
   Episode.find({ episodeNumber: req.params.episode })
     .then(ep => {
       Comment.find({ episode: req.params.episode })
@@ -34,27 +33,23 @@ router.get('/:episode/:new', (req, res, next) => {
           res.render("view/new", { episode: ep, comments: comment })
         })
     })
-    .catch(next);
 });
 
 router.post("/episode/:id", (req, res) => {
-  console.log('Add comment route reached!')
-  console.log(req.body.post)
-  console.log(req.params.id)
   Comment.create(
     {
       post: req.body.post,
       episode: req.params.id
     }
   )
-    .then((post) => {
+    .then(() => {
       console.log(req.body.episode)
       res.redirect(`/${req.params.id}`)
     })
     .catch(console.error)
 })
-//EDIT COMMENT
-router.get('/:episode/:id/:edit', (req, res, next) => {
+//EDIT COMMENT GET
+router.get('/:episode/:id/edit', (req, res) => {
   Episode.find({ episodeNumber: req.params.episode })
     .then(ep => {
       Comment.find({ _id: req.params.id })
@@ -62,7 +57,6 @@ router.get('/:episode/:id/:edit', (req, res, next) => {
           res.render("view/edit", { episode: ep, comments: comment })
         })
     })
-    .catch(next);
 });
 
 router.put('/:episode/:id', (req, res) => {
