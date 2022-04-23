@@ -1,9 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const cors = require('cors')
 const EpisodesControllers = require('./controllers/controller')
 const layout = require('express-ejs-layouts')
+
 
 app.use(cors())
 app.use(layout)
