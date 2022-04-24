@@ -23,6 +23,14 @@ router.get("/:episode", (req, res) => {
     })
 });
 
+router.get('/:episode/comments', (req, res) => {
+  console.log('Get comments route reached!')
+  Comment.find({episode: req.params.episode}).sort({ updatedAt: -1 })
+    .then(comments => {
+      res.render("view/comments", {comments})
+    })
+});
+
 
 //CREATE COMMENT
 router.get('/:episode/new', (req, res) => {

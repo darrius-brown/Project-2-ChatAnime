@@ -14,12 +14,12 @@
                <li> <%=episode[0].outroSong%></li>
            </ul>
            <a href="/<%=episode[0].episodeNumber%>/new" class="btn btn-primary">Add a comment</a>
+           <a href="/<%=episode[0].episodeNumber%>/comments" class="btn btn-secondary"> Edit Comments</a>
         <% comments.forEach(comment=> { %>
             <div class="cards">
                 <div class="font container-sm bg-info"> <%=comment.post %></div>
-                <a href="/<%=episode[0].episodeNumber%>/<%=comment._id %>/edit" class="btn btn-secondary"> Edit Comment</a>
                 <% }) %>
        </div>
-       <a href="/" class="btn btn-primary">Back</a>
+       
     </div>
     </body>
