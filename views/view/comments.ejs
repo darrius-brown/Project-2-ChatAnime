@@ -1,11 +1,11 @@
 
     <body>
-        <div class="sub-container">
-            <h1> Comments </h1>
+        <div class="row">
+            <h2 class="text-center border border-light p-3 "> Comments </h2>
             <% comments.forEach(comment=> { %>
-             <div class="cards">
-                 <div class="font container-sm bg-info"> <%=comment.post %></div>
-                 <a href="/<%=comment.episode%>/<%=comment._id %>/edit" class="btn btn-secondary"> Edit Comment</a>
+             <div>
+                 <div class="col font container-sm bg-info"> <%=comment.post %></div>
+                 <a href="/<%=comment.episode%>/<%=comment._id %>/edit" class="mb-3 btn btn-secondary"> Edit Comment</a>
                  <% }) %>
         </div>
      </div>

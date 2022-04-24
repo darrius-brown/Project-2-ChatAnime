@@ -1,14 +1,15 @@
 <body>
-    <h2>Edit Comment</h2>
+    <h2 class="text-center border border-light p-3 ">Edit Comment</h2>
     <form action="/<%=episode[0].episodeNumber%>/<%=comments[0]._id%>/?_method=put" method="POST">
         <div class="form-group">
             <label for="post">Post:</label>
-            <input type="text" id="post" name="post" class="form-control" value="<%=comments[0].post%>">
-        </div>
+            <input type="text" id="post" name="post" class="mb-3 form-control" value="<%=comments[0].post%>">
+        
         <input type="submit" value="Update Post" class="btn btn-primary" />
-        <a href="/" class="btn btn-secondary">Cancel</a>
+        <a href="/<%=episode[0].episodeNumber%>" class="btn btn-secondary">Cancel</a>
     </form>
     <form action="/<%=episode[0].episodeNumber%>/<%=comments[0]._id%>?_method=DELETE" method="POST" class="d-inline">
         <input type="submit" value="Delete" class="btn btn-danger" />
+    </div>
 
 </body>

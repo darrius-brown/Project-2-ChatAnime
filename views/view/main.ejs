@@ -1,15 +1,16 @@
 
 <body>
-    <div class="container ">
+    <div class="container border border-light">
         <% episodes.forEach(episode=> { %>
-            <div class="cards  ">
-                <h2 class="font text-white" id="ep-num">Episode <%=episode.episodeNumber %>
+            <div class="border border-light cards row align-items-center">
+                <h2 class="col font text-white" id="ep-num">Episode <%=episode.episodeNumber %>
                 </h2>
-                <div class="font text-white">
+                <div class="col font text-white">
                     <%=episode.name %>
                 </div>
-                <input type="image" src="<%=episode.img %>" name="saveForm" class="btTxt img submit text-white" id="saveForm" />
-                <a class="btn btn-primary text-white "href="/<%=episode.episodeNumber %>">Discuss here!</a>
+                <input type="image" src="<%=episode.img %>" name="saveForm" class="col btTxt img submit text-white" id="saveForm" />
+                <a class=" 
+                col align-self-center btn btn-primary text-white "href="/<%=episode.episodeNumber %>">Discuss here!</a>
             </div>
 
             <% }) %>
