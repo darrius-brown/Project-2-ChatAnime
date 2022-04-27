@@ -1,12 +1,13 @@
-
-    <body>
-        <div class="row">
-            <h2 class="text-center border border-light p-3 "> Comments </h2>
-            <% comments.forEach(comment=> { %>
-             <div>
-                 <div class="col font container-sm bg-info"> <%=comment.post %></div>
-                 <a href="/<%=comment.episode%>/<%=comment._id %>/edit" class="mb-3 btn btn-secondary"> Edit Comment</a>
-                 <% }) %>
-        </div>
-     </div>
-     </body>
+<body>
+    <div class="row">
+        <h2 class="text-center border border-light p-3 "> Comments </h2>
+        <% comments.forEach(comment=> { %>
+            <div>
+                <div class="col font container-sm bg-info">
+                    <%=comment.post %>
+                </div>
+                <a href="/<%=comment.episode%>/<%=comment._id %>/edit" class="mb-3 btn btn-secondary"> Edit Comment</a>
+                <% }) %>
+            </div>
+    </div>
+</body>

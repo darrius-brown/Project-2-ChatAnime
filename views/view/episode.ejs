@@ -1,32 +1,40 @@
+<body>
+    <div class="sub-container ">
+        <h2 class="p-3 text-center border border-light" id="ep-name">Episode <%=episode[0].episodeNumber%>:
+                <%=episode[0].name%>
+        </h2>
 
-    <body>
-       <div class="sub-container ">
-           <h2 class="p-3 text-center border border-light" id="ep-name">Episode <%=episode[0].episodeNumber%>: <%=episode[0].name%></h2>
-           
-           <div class=" p-2 mt-3 border border-light font row">
-            <input id="img"type="image" src="<%=episode[0].img %>" name="saveForm" class="col btTxt submit" id="saveForm" />
-               <div class="col align-self-top">
-                   <h5>Release Date</h5>
-                   <%=episode[0].releaseDate%></div>
-               <div class="col align-self-top">
+        <div class=" p-2 mt-3 border border-light font row">
+            <input id="img" type="image" src="<%=episode[0].img %>" name="saveForm" class="col btTxt submit"
+                id="saveForm" />
+            <div class="col align-self-top">
+                <h5>Release Date</h5>
+                <%=episode[0].releaseDate%>
+            </div>
+            <div class="col align-self-top">
                 <h5>Intro Song</h5>
-                 <%=episode[0].introSong%></div>
-               <div class="col align-self-top">
-                <h5>Outro Song</h5> 
-                 <%=episode[0].outroSong%></div>
-               <div class="mt-3">Summary: <%=episode[0].summary%></div>
-           </div>
-           <a href="/<%=episode[0].episodeNumber%>/new" class="my-3 btn btn-primary">Add a comment</a>
-           <a href="/<%=episode[0].episodeNumber%>/comments" class="my-3  btn btn-secondary"> Edit Comments</a>
-           <%like = () => {comment.likes += 1}%>
-        <% comments.forEach(comment=> { %>
-            <div>
-                <div class="my-3 font container-sm bg-info"> <%=comment.post %>           
-                    <p>Likes: <%=comment.likes %></p>
+                <%=episode[0].introSong%>
+            </div>
+            <div class="col align-self-top">
+                <h5>Outro Song</h5>
+                <%=episode[0].outroSong%>
+            </div>
+            <div class="mt-3">Summary: <%=episode[0].summary%>
+            </div>
+        </div>
+        <a href="/<%=episode[0].episodeNumber%>/new" class="my-3 btn btn-primary">Add a comment</a>
+        <a href="/<%=episode[0].episodeNumber%>/comments" class="my-3  btn btn-secondary"> Edit Comments</a>
+        <%like=()=> {comment.likes += 1}%>
+            <% comments.forEach(comment=> { %>
+                <div>
+                    <div class="my-3 font container-sm bg-info">
+                        <%=comment.post %>
+                            <p>Likes: <%=comment.likes %>
+                            </p>
+                    </div>
+                    <button onclick="like()" class="btn btn-success">LIKE</button>
+                    <% }) %>
                 </div>
-                <button onclick="like()" class="btn btn-success">LIKE</button>
-                <% }) %>
-       </div>
-       
+
     </div>
-    </body>
+</body>
