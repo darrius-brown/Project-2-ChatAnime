@@ -31,3 +31,18 @@ When you have completed chatting anime, log out and return when you're ready to 
 |  Register  |            |
 :-----------:|:----------:|
 ![Successful Register](https://user-images.githubusercontent.com/91982228/166092929-f89f1087-dcaa-4e5d-bf34-025db835801c.png)  | 
+
+## Technologies Used
+---
+EJS, Bootstrap, JavaScript
+
+---
+
+### What's Next?
+- Utilize API's to add more anime options to discuss.
+- Allow users to edit their comments only.
+- Episode create route should only be accessed by the app creator.
+- Add like button and dislike button. 
+- Refactor code
+
+All rights reserved. Darrius Brown 2022.
