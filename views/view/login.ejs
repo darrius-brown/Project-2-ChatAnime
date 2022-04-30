@@ -1,8 +1,5 @@
 <h2>Login!</h2>
-<% if (messages.error ) { %>
-    <%=messages.error %>
-    <% } %>
-<form action="/login" method="POST">
+<form action="/user/login" method="POST">
     <div>
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
@@ -11,6 +8,6 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
     </div>
-    <button type="submit">Login</button>
+    <button class="mt-4 btn btn-primary" type="submit">Login</button>
 </form>
-<a href="/login">Login</a>
+<a class="mt-4 btn btn-primary" href="/user/register">Register</a>

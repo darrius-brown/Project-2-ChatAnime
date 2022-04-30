@@ -1,9 +1,0 @@
-Project 1 feedback
-Better readme
-
-HTML
-Favicon
-    remove garbage code
-    move notes to another file
-
-JS

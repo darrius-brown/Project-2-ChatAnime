@@ -1,0 +1,39 @@
+<body>
+    <h2 class="text-center border border-light p-3 ">Create new episode</h2>
+
+    <form action="/newepisode" method="POST">
+        <div class="my-3 form-group">
+            <label for="post">Episode Number:</label>
+            <input type="text" id="episodeNumber" name="episodeNumber" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Episode Name:</label>
+            <input type="text" id="name" name="name" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Release Date:</label>
+            <input type="text" id="releaseDate" name="releaseDate" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Episode Image:</label>
+            <input type="text" id="img" name="img" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Summary:</label>
+            <input type="text" id="summary" name="summary" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Intro Song:</label>
+            <input type="text" id="introSong" name="introSong" class="form-control" />
+        </div>
+        <div class="my-3 form-group">
+            <label for="post">Outro Song:</label>
+            <input type="text" id="outroSong" name="outroSong" class="form-control" />
+        </div>
+
+        <input type="submit" class="btn btn-primary" />
+
+        <a href="/main" class="btn btn-secondary">Cancel</a>
+
+    </form>
+</body>
