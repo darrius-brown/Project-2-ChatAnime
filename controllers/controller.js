@@ -3,7 +3,7 @@ const router = express.Router()
 const Episode = require('../models/episodes-model')
 const Comment = require('../models/comments-model')
 
-//CREATE EPISODE (rare)
+
 router.get('/newepisode', (req, res) => {
   res.render('view/newepisode')
 })
@@ -14,7 +14,7 @@ router.post("/newepisode", (req, res) => {
     .then(res.redirect("/"))
 });
 
-//READ
+
 router.get("/", (req, res) => {
   console.log('Get episodes route reached!')
   Episode.find({})
@@ -44,7 +44,7 @@ router.get('/:episode/comments', (req, res) => {
     })
 });
 
-//CREATE 
+
 router.get('/:episode/new', (req, res) => {
   Episode.find({ episodeNumber: req.params.episode })
     .then(ep => {
@@ -66,7 +66,7 @@ router.post("/episode/:id", (req, res) => {
       res.redirect(`/${req.params.id}`)
     })
 })
-//EDIT 
+
 router.get('/:episode/:id/edit', (req, res) => {
   Episode.find({ episodeNumber: req.params.episode })
     .then(ep => {
@@ -89,7 +89,7 @@ router.put('/:episode/:id', (req, res) => {
     })
 });
 
-//DELETE COMMENT
+
 router.delete('/:episode/:id', (req, res) => {
   console.log('Delete Comment route reached!')
   Comment.findOneAndDelete({
@@ -107,4 +107,4 @@ router.delete('/:episode/:id', (req, res) => {
 const EpisodesController = router
 module.exports = EpisodesController;
 
-//
+
